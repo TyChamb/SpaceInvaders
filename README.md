@@ -12,3 +12,4 @@ Code is easy to read
 -Pseudocode comments explain the different sections of code
 -Named items are easy to understand (i.e. they are named something that makes sense)
 -White space is used to separate sections of the program
+ 
