@@ -1,5 +1,7 @@
 Rubric:
+
 _ = Done
+
 X = WIP
 
 Code creates a working game
