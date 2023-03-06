@@ -1,4 +1,4 @@
-#global variables 
+# global variables 
 fps = 60
 projectileColor = (255, 0, 0)
 playerSpeed = 5
