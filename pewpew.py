@@ -8,10 +8,10 @@ from pygame import mixer
 pygame.init()
 
 # create the screen
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((1920, 1080))
 
 # Background
-background = pygame.image.load('good-icon.png')
+background = pygame.image.load('MichaelHeehee.png')
 
 # Caption and Icon
 pygame.display.set_caption("Space Invader")
@@ -21,7 +21,7 @@ pygame.display.set_icon(icon)
 # Player
 playerImg = pygame.image.load('Michael.png')
 playerX = 370
-playerY = 480
+playerY = 580
 playerX_change = 0
 
 # Enemy
@@ -42,7 +42,7 @@ for i in range(num_of_enemies):
 # Bullet
 bulletImg = pygame.image.load('good-icon.png')
 bulletX = 0
-bulletY = 480
+bulletY = 580
 bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"
@@ -110,8 +110,7 @@ while running:
                 playerX_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
-                    bulletSound = mixer.Sound("laser.wav")
-                    bulletSound.play()
+
                     # Get the current x cordinate of the spaceship
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
