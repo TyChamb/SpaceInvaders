@@ -1,8 +1,6 @@
-import math
 import random
 
 import pygame
-from pygame import mixer
 
 # Intialize the pygame
 pygame.init()
@@ -23,7 +21,7 @@ num_of_enemies = 6
 for i in range(num_of_enemies):
     enemyImg.append(pygame.image.load('Zombie2.png'))
     enemyX.append(random.randint(0, 736))
-    enemyY.append(random.randint(50, 150))
+    enemyY.append(random.randint(0, 0))
     enemyX_change.append(4)
     enemyY_change.append(40)
 
@@ -35,7 +33,6 @@ def enemy(x, y, i):
 # Game Loop
 running = True
 while running:
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
