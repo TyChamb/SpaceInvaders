@@ -72,25 +72,120 @@ carScaled2 = pygame.transform.scale(carBase2, (250, 125))
 barrier2 = Barrier2(scrn.get_rect().center, carScaled2)
 spritesB2 = pygame.sprite.Group([barrier2])
 
+class Enemy1(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (750,200))
+enemyBase1 = pygame.image.load('Zombie1.png').convert_alpha()
+enemyScaled1 = pygame.transform.scale(enemyBase1, (100, 100))
+E1 = Enemy1(scrn.get_rect().center, enemyScaled1)
+enemy1 = pygame.sprite.Group([E1])
+enemy1.draw(scrn)
+class Enemy2(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (650,200))
+enemyBase2 = pygame.image.load('Zombie1.png').convert_alpha()
+enemyScaled2 = pygame.transform.scale(enemyBase2, (100, 100))
+E2 = Enemy2(scrn.get_rect().center, enemyScaled2)
+enemy2 = pygame.sprite.Group([E2])
+enemy2.draw(scrn)
+class Enemy3(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (550,200))
+enemyBase3 = pygame.image.load('Zombie1.png').convert_alpha()
+enemyScaled3 = pygame.transform.scale(enemyBase3, (100, 100))
+E3 = Enemy3(scrn.get_rect().center, enemyScaled3)
+enemy3 = pygame.sprite.Group([E3])
+enemy3.draw(scrn)
+class Enemy4(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (850,200))
+enemyBase4 = pygame.image.load('Zombie1.png').convert_alpha()
+enemyScaled4 = pygame.transform.scale(enemyBase4, (100, 100))
+E4 = Enemy4(scrn.get_rect().center, enemyScaled4)
+enemy4 = pygame.sprite.Group([E4])
+enemy4.draw(scrn)
+class Enemy5(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (950,200))
+enemyBase5 = pygame.image.load('Zombie1.png').convert_alpha()
+enemyScaled5 = pygame.transform.scale(enemyBase5, (100, 100))
+E5 = Enemy5(scrn.get_rect().center, enemyScaled5)
+enemy5 = pygame.sprite.Group([E5])
+enemy5.draw(scrn)
+class EnemyA(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (700,350))
+enemyBaseA = pygame.image.load('Zombie2.png').convert_alpha()
+enemyScaledA = pygame.transform.scale(enemyBaseA, (50, 100))
+EA = EnemyA(scrn.get_rect().center, enemyScaledA)
+enemyA = pygame.sprite.Group([EA])
+enemyA.draw(scrn)
+class EnemyB(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (600,350))
+enemyBaseB = pygame.image.load('Zombie2.png').convert_alpha()
+enemyScaledB = pygame.transform.scale(enemyBaseB, (50, 100))
+EB = EnemyB(scrn.get_rect().center, enemyScaledB)
+enemyB = pygame.sprite.Group([EB])
+enemyB.draw(scrn)
+class EnemyC(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (500,350))
+enemyBaseC = pygame.image.load('Zombie2.png').convert_alpha()
+enemyScaledC = pygame.transform.scale(enemyBaseC, (50, 100))
+EC = EnemyC(scrn.get_rect().center, enemyScaledC)
+enemyC = pygame.sprite.Group([EC])
+enemyC.draw(scrn)
+class EnemyD(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (800,350))
+enemyBaseD = pygame.image.load('Zombie2.png').convert_alpha()
+enemyScaledD = pygame.transform.scale(enemyBaseD, (50, 100))
+ED = EnemyD(scrn.get_rect().center, enemyScaledD)
+enemyD = pygame.sprite.Group([ED])
+enemyD.draw(scrn)
+class EnemyE(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (900,350))
+enemyBaseE = pygame.image.load('Zombie2.png').convert_alpha()
+enemyScaledE = pygame.transform.scale(enemyBaseE, (50, 100))
+EE = EnemyE(scrn.get_rect().center, enemyScaledE)
+enemyE = pygame.sprite.Group([EE])
+enemyE.draw(scrn)
+class EnemyF(pygame.sprite.Sprite):
+    def __init__(self, center_xy, image):
+        super().__init__() 
+        self.image = image
+        self.rect = self.image.get_rect(center = (1000,350))
+enemyBaseF = pygame.image.load('Zombie2.png').convert_alpha()
+enemyScaledF = pygame.transform.scale(enemyBaseF, (50, 100))
+EF = EnemyF(scrn.get_rect().center, enemyScaledF)
+enemyF = pygame.sprite.Group([EF])
+enemyF.draw(scrn)
 
 spritesB1.draw(scrn)
 spritesB2.draw(scrn)
 pygame.display.flip()
-
-pygame.draw.rect(surface, color3,(0, 0, 150, 900))
-pygame.draw.rect(surface, color3,(1350, 0, 150, 900))
-pygame.draw.rect(surface, color3,(0, 0, 1500, 50))
-pygame.draw.rect(surface, color3,(0, 750, 1500, 50))
-
-pygame.draw.rect(surface, color2,(150, 100, 1205, 1))
-pygame.draw.rect(surface, color2,(150, 675, 1205, 1))
-
-pygame.draw.rect(surface, color,(150, 50, 5, 700))
-pygame.draw.rect(surface, color,(1350, 50, 5, 700))
-pygame.draw.rect(surface, color,(150, 50, 1205, 5))
-pygame.draw.rect(surface, color,(150, 750, 1205, 5))
-
-
 
 scrn.blit(pygame.transform.scale(michel, (60, 60)), (175, 680))
 scrn.blit(pygame.transform.scale(michel, (60, 60)), (237.5, 680))
@@ -130,7 +225,10 @@ class Player(pygame.sprite.Sprite):
         keys = pygame.key.get_pressed()
         self.rect.x += (keys[pygame.K_d]-keys[pygame.K_a]) * 5 
         
-        self.rect.clamp_ip(surf.get_rect())
+        if self.rect.x > 1050:
+            self.rect.x -= 5
+        elif self.rect.x < 400:
+            self.rect.x += 5
 
   # fire projectile
     def fire(self):
@@ -142,25 +240,6 @@ class Player(pygame.sprite.Sprite):
         # add each projectile to sprite group for all projectiles
         projectiles.add(projectile)
 
-# Enemy
-enemyImg = []
-enemyX = []
-enemyY = []
-enemyX_change = []
-enemyY_change = []
-num_of_enemies = 6
-
-for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('Zombie2.png'))
-    enemyX.append(random.randint(0, 736))
-    enemyY.append(random.randint(50, 150))
-    enemyX_change.append(4)
-    enemyY_change.append(40)
-
-def enemy(x, y, i):
-    scrn.blit(enemyImg[i], (x, y))
-
-
 # sprite base image
 michelBase = pygame.image.load('Michael.png').convert_alpha()
 michelScaled = pygame.transform.scale(michelBase, (55, 80))
@@ -168,8 +247,7 @@ player = Player(scrn.get_rect().center, michelScaled)
 controlledPlayer = pygame.sprite.Group([player])
 
 all_sprites = pygame.sprite.Group([background, player, barrier1, barrier2])
-
-
+all_enemies = pygame.sprite.Group([E1,E2,E3,E4,E5,EA,EB,EC,ED,EE,EF])
 #background = 
 # loop that stops the program when the player quits
 
@@ -188,34 +266,33 @@ while (status):
             if event.key == pygame.K_SPACE:
                 player.fire()
 
-    for i in range(num_of_enemies):
-
-        # Game Over
-        if enemyY[i] > 440:
-            for j in range(num_of_enemies):
-                enemyY[j] = 2000
-            break
-
-        enemyX[i] += enemyX_change[i]
-        if enemyX[i] <= 0:
-            enemyX_change[i] = 4
-            enemyY[i] += enemyY_change[i]
-        elif enemyX[i] >= 736:
-            enemyX_change[i] = -4
-            enemyY[i] += enemyY_change[i]
-
-        enemy(enemyX[i], enemyY[i], i)
-
     controlledPlayer.update(scrn)
     projectiles.update()
 
     all_sprites.update(scrn)
     all_sprites.draw(scrn)
+    all_enemies.update(scrn)
+    all_enemies.draw(scrn)
 
     projectiles.draw(scrn)
     controlledPlayer.draw(scrn)
 
     pygame.display.flip()
+
+class HUD():
+    pygame.draw.rect(surface, color3,(0, 0, 150, 900))
+    pygame.draw.rect(surface, color3,(1350, 0, 150, 900))
+    pygame.draw.rect(surface, color3,(0, 0, 1500, 50))
+    pygame.draw.rect(surface, color3,(0, 750, 1500, 50))
+
+    pygame.draw.rect(surface, color2,(150, 100, 1205, 1))
+    pygame.draw.rect(surface, color2,(150, 675, 1205, 1))
+
+    pygame.draw.rect(surface, color,(150, 50, 5, 700))
+    pygame.draw.rect(surface, color,(1350, 50, 5, 700))
+    pygame.draw.rect(surface, color,(150, 50, 1205, 5))
+    pygame.draw.rect(surface, color,(150, 750, 1205, 5))
+
 
 # deactivates the pygame library
 pygame.quit()
