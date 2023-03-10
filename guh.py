@@ -64,7 +64,7 @@ class Background(pygame.sprite.Sprite):
         super().__init__() 
 
         self.image = image
-        self.rect = self.image.get_rect(center = ((screenX / 2), (screenY /2)))
+        self.rect = self.image.get_rect(center = ((int(screenX / 2)), (int(screenY /2))))
 
 # Spawn background in the center of the screen
 background = Background(scrn.get_rect().center, backgroundBase)
