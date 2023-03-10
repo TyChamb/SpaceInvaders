@@ -176,16 +176,14 @@ michelBase = pygame.transform.scale(michelBase, (55, 80))
 player = Player(scrn.get_rect().center, michelBase)
 controlledPlayer = pygame.sprite.Group([player])
 
-# put all sprites into a group
-all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
-
-
 # spawn enemies 
 for i in range(enemyCount):
     enemyImg.append(pygame.image.load('Zombie2.png'))
     enemyImg[i] = pygame.transform.scale(enemyImg[i], (35, 60))
+
     enemyX.append(enemySpawnX)
     enemyY.append(200)
+
     scrn.blit(enemyImg[i], (enemyX[i], enemyY[i]))
 
     # change spawn position for the next enemy
@@ -193,11 +191,13 @@ for i in range(enemyCount):
 
 
 
+# put all sprites into a group
+all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
+
 # spawn cars onto the screen
 carV1.draw(scrn)
 carV2.draw(scrn)
 pygame.display.flip()
-
 
 
 # loop until player quits the game
