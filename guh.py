@@ -35,6 +35,7 @@ backgroundBase = pygame.image.load('Background.png').convert_alpha()
 backgroundBase = pygame.transform.scale(backgroundBase, (screenX, screenY))
 
 michelBase = pygame.image.load("Michael.png").convert_alpha()
+michelBase = pygame.transform.scale(michelBase, (55, 80))
 
 carOneBase = pygame.image.load('Car1.png').convert_alpha()
 carOneBase = pygame.transform.scale(carOneBase, (250, 125))
@@ -156,8 +157,6 @@ class Player(pygame.sprite.Sprite):
 
 
 # Spawn and assign player controls to Michael
-michelBase = pygame.image.load('Michael.png').convert_alpha()
-michelBase = pygame.transform.scale(michelBase, (55, 80))
 
 player = Player(scrn.get_rect().center, michelBase)
 controlledPlayer = pygame.sprite.Group([player])
