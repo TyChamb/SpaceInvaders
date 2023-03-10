@@ -191,10 +191,6 @@ all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
 
 
 
-
-
-
-
 # loop until player quits the game
 status = True
 
