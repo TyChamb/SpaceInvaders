@@ -47,10 +47,12 @@ enemyBase = pygame.transform.scale(enemyBase, (100, 100))
 
 # enemy spawn variables and lists
 enemyImg = []
+
+enemySpawnX = 450
 enemyX = []
 enemyY = []
+
 enemyCount = 11
-enemySpawnX = 450
 
 
 
@@ -77,7 +79,6 @@ class CarOne(pygame.sprite.Sprite):
         self.image = image
         self.rect = self.image.get_rect(center = (500, 500))
 
-# second car classification
 class CarTwo(pygame.sprite.Sprite):
     
     def __init__(self, center_xy, image):
@@ -85,15 +86,6 @@ class CarTwo(pygame.sprite.Sprite):
 
         self.image = image
         self.rect = self.image.get_rect(center = (1000, 500))
-
-
-# spawn the first car on the given position
-carOne = CarOne(scrn.get_rect().center, carOneBase)
-carV1 = pygame.sprite.Group([carOne])
-
-#spawn the second car on the given position
-carTwo = CarTwo(scrn.get_rect().center, carTwoBase)
-carV2 = pygame.sprite.Group([carTwo])
 
 
 
@@ -110,16 +102,18 @@ class Enemy(pygame.sprite.Sprite):
 class Projectile(pygame.sprite.Sprite):
 # add specific spawn location for bullet based on player position
     def __init__(self, x, y):
+        # set projectile size and color, then prepare it for creation
         pygame.sprite.Sprite.__init__(self)
+        
         self.image = pygame.Surface((5, 10))
         self.image.fill(projectileColor)
         self.rect = self.image.get_rect()
  
-        # weapon fired from top of player
+        # projectile fires from top center of player
         self.rect.bottom = y
         self.rect.centerx = x
 
-        # projectile speed
+        # set projectile speed
         self.speed_y = -(projectileSpeed)
 
     def update(self):
@@ -139,9 +133,11 @@ class Player(pygame.sprite.Sprite):
 
     # player movement
     def update(self, surf):
+        # if player presses a, move michael 5 pixels to the left, otherwise if they pressed d, move michael 5 pixels to the right
         keys = pygame.key.get_pressed()
         self.rect.x += (keys[pygame.K_d]-keys[pygame.K_a]) * 5 
         
+        # if the player goes away from the center of the screen, push them back
         if self.rect.x > 1050:
             self.rect.x -= 5
         elif self.rect.x < 400:
@@ -180,10 +176,13 @@ for i in range(enemyCount):
     # change spawn position for the next enemy
     enemySpawnX = enemySpawnX + 60
 
+# spawn the cars on their given position
+carOne = CarOne(scrn.get_rect().center, carOneBase)
+carTwo = CarTwo(scrn.get_rect().center, carTwoBase)
 
-# spawn cars onto the screen
-carV1.draw(scrn)
-carV2.draw(scrn)
+cars = pygame.sprite.Group([carOne, carTwo])
+
+cars.draw(scrn)
 pygame.display.flip()
 
 # put all sprites into a group
