@@ -107,15 +107,6 @@ class Enemy(pygame.sprite.Sprite):
 
 
 
-
-
-carV1.draw(scrn)
-carV2.draw(scrn)
-pygame.display.flip()
-
-scrn.blit(pygame.transform.scale(michelBase, (60, 60)), (175, 680))
-scrn.blit(pygame.transform.scale(michelBase, (60, 60)), (237, 680))
-
 class Projectile(pygame.sprite.Sprite):
 # add specific spawn location for bullet based on player position
     def __init__(self, x, y):
