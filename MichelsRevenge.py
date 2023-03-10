@@ -200,7 +200,7 @@ pygame.display.flip()
 
 
 
-
+# loop until player quits the game
 pygame.display.flip()
 status = True
 while (status):
