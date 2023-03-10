@@ -190,14 +190,13 @@ for i in range(enemyCount):
     enemySpawnX = enemySpawnX + 60
 
 
-
-# put all sprites into a group
-all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
-
 # spawn cars onto the screen
 carV1.draw(scrn)
 carV2.draw(scrn)
 pygame.display.flip()
+
+# put all sprites into a group
+all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
 
 
 # loop until player quits the game
