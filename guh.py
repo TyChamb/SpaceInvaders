@@ -190,13 +190,19 @@ pygame.display.flip()
 all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
 
 
+
+
+
+
+
 # loop until player quits the game
-pygame.display.flip()
 status = True
+
 while (status):
     # Reset screen, then go to next frame
     scrn.fill(0)
     clock.tick(fps)
+
 
     # check events
     for event in pygame.event.get():
@@ -212,6 +218,7 @@ while (status):
                 # if player pressed space, fire a projectile
                 player.fire()
 
+
     # update all sprites
     controlledPlayer.update(scrn)
     projectiles.update()
@@ -219,9 +226,9 @@ while (status):
     all_sprites.update(scrn)
     all_sprites.draw(scrn)
     
-
     projectiles.draw(scrn)
     controlledPlayer.draw(scrn)
+
 
     # flip screen orientation to normal again
     pygame.display.flip()
