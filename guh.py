@@ -77,11 +77,6 @@ class CarOne(pygame.sprite.Sprite):
         self.image = image
         self.rect = self.image.get_rect(center = (500,500))
 
-# spawn the first car on the given position
-carOne = CarOne(scrn.get_rect().center, carOneBase)
-carV1 = pygame.sprite.Group([carOne])
-
-
 # second car classification
 class CarTwo(pygame.sprite.Sprite):
     
@@ -90,6 +85,11 @@ class CarTwo(pygame.sprite.Sprite):
 
         self.image = image
         self.rect = self.image.get_rect(center = (1000,500))
+
+
+# spawn the first car on the given position
+carOne = CarOne(scrn.get_rect().center, carOneBase)
+carV1 = pygame.sprite.Group([carOne])
 
 #spawn the second car on the given position
 carTwo = CarTwo(scrn.get_rect().center, carTwoBase)
@@ -106,9 +106,6 @@ class Enemy(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center = (spawnX, spawnY))
 
 
-# enemy = Enemy(scrn.get_rect().center, 100, 200, enemyBase)
-#enemy = pygame.sprite.Group([enemy])
-# enemy.draw(scrn)
 
 
 
@@ -137,7 +134,7 @@ class Projectile(pygame.sprite.Sprite):
     def update(self):
         self.rect.y += self.speed_y
         
-        # remove from game if it goes past end of screen
+        # remove projectile from the game if it goes past end of screen
         if self.rect.bottom < 0:
             self.kill()
 
@@ -174,14 +171,16 @@ class Player(pygame.sprite.Sprite):
 
 # Spawn and assign player controls to Michael
 michelBase = pygame.image.load('Michael.png').convert_alpha()
-michelScaled = pygame.transform.scale(michelBase, (55, 80))
-player = Player(scrn.get_rect().center, michelScaled)
+michelBase = pygame.transform.scale(michelBase, (55, 80))
+
+player = Player(scrn.get_rect().center, michelBase)
 controlledPlayer = pygame.sprite.Group([player])
 
+# put all sprites into a group
 all_sprites = pygame.sprite.Group([background, player, carOne, carTwo])
 
+
 # spawn enemies 
-DOESNT UPDATE ENEMY BLITS, FIX ASAP
 for i in range(enemyCount):
     enemyImg.append(pygame.image.load('Zombie2.png'))
     enemyImg[i] = pygame.transform.scale(enemyImg[i], (35, 60))
@@ -194,33 +193,36 @@ for i in range(enemyCount):
 
 
 
-
-
-
-
+# spawn cars onto the screen
 carV1.draw(scrn)
 carV2.draw(scrn)
 pygame.display.flip()
 
 
 
-
+# loop until player quits the game
 pygame.display.flip()
 status = True
 while (status):
+    # Reset screen, then go to next frame
     scrn.fill(0)
     clock.tick(fps)
+
+    # check events
     for event in pygame.event.get():
         
+        # check if player quit the game
         if event.type == pygame.QUIT:
+            # if player quit the game, end the loop
             status = False
            
-           # if space is pressed, fire a projectile
+        # check if player presses space
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+                # if player pressed space, fire a projectile
                 player.fire()
 
-    # update all sprites and textures
+    # update all sprites
     controlledPlayer.update(scrn)
     projectiles.update()
 
@@ -230,10 +232,10 @@ while (status):
 
     projectiles.draw(scrn)
     controlledPlayer.draw(scrn)
+
     # flip screen orientation to normal again
     pygame.display.flip()
 
 
-# deactivates the pygame library
+# deactivate pygame and close the window once the loop ends
 pygame.quit()
-
