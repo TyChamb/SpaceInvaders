@@ -75,7 +75,7 @@ class CarOne(pygame.sprite.Sprite):
         super().__init__()
 
         self.image = image
-        self.rect = self.image.get_rect(center = (500,500))
+        self.rect = self.image.get_rect(center = (500, 500))
 
 # second car classification
 class CarTwo(pygame.sprite.Sprite):
@@ -84,7 +84,7 @@ class CarTwo(pygame.sprite.Sprite):
         super().__init__() 
 
         self.image = image
-        self.rect = self.image.get_rect(center = (1000,500))
+        self.rect = self.image.get_rect(center = (1000, 500))
 
 
 # spawn the first car on the given position
@@ -135,7 +135,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, center_xy, image):
         super().__init__() 
         self.image = image
-        self.rect = self.image.get_rect(center = (750,600))
+        self.rect = self.image.get_rect(center = (750, 600))
 
     # player movement
     def update(self, surf):
