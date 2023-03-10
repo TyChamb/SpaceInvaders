@@ -159,13 +159,13 @@ class Player(pygame.sprite.Sprite):
 
 
 
-
 # Spawn and assign player controls to Michael
 michelBase = pygame.image.load('Michael.png').convert_alpha()
 michelBase = pygame.transform.scale(michelBase, (55, 80))
 
 player = Player(scrn.get_rect().center, michelBase)
 controlledPlayer = pygame.sprite.Group([player])
+
 
 # spawn enemies 
 for i in range(enemyCount):
